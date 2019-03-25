@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+      Dragging AND Dropping
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3B5998;
+        color: white;
+        height: 100px;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: 100px;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: 100px;
+		width: auto; 
+	  }
+	  #great{
+		background-color: #8a1979;	
+	  }
+      #droppable{
+        background-color: #b513eb;
+        height: 300px;
+        widows: auto;
+        margin-top: 20px;
+        color: white;
+      }
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>    
+  </head>
+  
+  <body>
+    <div class="bluebox ui-corner-all" id="facebook">
+        <p>Facebook is <span id="great">great</span></p>
+    </div>
+    <div class="yellowbox sans-serif ui-corner-all" id="apple">
+        <ul id="list">
+            <li>eggs</li>
+            <li>milk</li>
+            <li>bread</li>
+        </ul>
+    </div>
+    <div class="greenbox ui-corner-all" id="microsoft">
+      <p id="microsoftPara">Microsoft.</p> 
+      <p><a href="http://www.microsoft.com" title="Microsoft" id="microsoftLink">Microsoft Link</a></p>
+    </div>
+      <div id="droppable" class="ui-corner-all"><p>Drop things here.</p></div>
+
+    <script>
+        var messages = ["Please!","Leave me alone!","Drop me!","Come On!"];
+        $(function() {
+           $("#facebook").draggable();
+           $("#apple").draggable({axis : "y"});
+           $("#microsoft").draggable({revert : true, start:function(){
+               $("#facebook").css("background-color","orange");
+           },drag:function(){
+               $("#microsoft").css("background-color","rgb("+Math.floor(256*Math.random())+","+Math.floor(256*Math.random())+","+Math.floor(256*Math.random())+")");
+               $("#microsoft").find("p").html(messages[Math.floor(Math.random()*4)]);
+           }, stop:function(){
+               $("#apple").css("background-color","cyan");
+               $("#microsoft").html("<p>Finally.!</p>");
+           }});
+           $("#droppable").droppable({drop:function(event,ui){
+               $(this).css("background-color","#21dd85");
+               $(this).find("p").remove();
+               $("<li></li>").text(ui.draggable.text()).appendTo(this);
+           },accept:"#list li"});
+           $("#list").find("li").draggable({helper:"clone", appendTo:"body"});
+        });
+    </script>
+  </body>
+  
+  
+</html>

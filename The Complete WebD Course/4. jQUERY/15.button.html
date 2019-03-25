@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>Buttons</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/blitzer/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+    </script>
+
+    <style>
+      .bluebox{
+        background-color: #3B5998;
+        color: white;
+        height: 100px;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: 100px;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: 100px;
+		width: auto; 
+	  }
+	  #great{
+		background-color: #8a1979;	
+	  }
+    </style>    
+  </head>
+  
+  <body>
+    <div class="bluebox ui-corner-all" id="facebook"> 
+        <div id="checkboxes">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Audi</label>
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">BMW</label>
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3">Mercedes</label>
+            
+        </div>
+    </div>
+    <div class="yellowbox sans-serif ui-corner-all" id="apple">
+        <input type="checkbox" id="myCheckbox">
+        <label for="myCheckbox">Checkbox</label>
+    </div>
+    <div class="greenbox ui-corner-all" id="microsoft">
+<!--        <form>-->
+            <div id="rB">
+                <input type="radio" id="rB1" name="rBs">
+                <label for="rB1">Ford</label>
+                <input type="radio" id="rB2" name="rBs">
+                <label for="rB2">Toyota</label>
+                <input type="radio" id="rB3" name="rBs">
+                <label for="rB3">Ferrari</label>
+            </div>
+<!--        </form>-->
+    </div>
+    <button id="button1">Button1</button>
+    <button id="button2">Button3</button>  
+    <button id="button3">Button3</button>  
+    <script>
+        $(function() {
+            $("#button1").button();
+            $("#button2").button({
+                icons: {
+                    primary: "ui-icon-folder-open"
+                },
+                text:false
+            });
+            $("#button3").button({
+                icons: {
+                    primary:"ui-icon-mail-closed",
+                    secondary:"ui-icon-carat-1-e"
+                }
+            });
+            $("#myCheckbox").button();
+            $("#checkboxes").buttonset();
+            $("#rB").buttonset();
+        });
+        
+    </script>
+  </body>
+  
+  
+</html>

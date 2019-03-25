@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>Autocomplete</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+    </script>
+
+    <style>
+      .bluebox{
+        background-color: #3B5998;
+        color: white;
+        height: 100px;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: 100px;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: auto;
+		width: auto; 
+	  }
+	  #great{
+		background-color: #8a1979;	
+	  }
+        .ui-autocomplete {
+            max-height: 100px;
+            overflow-y: auto;
+            max-width: 200px;
+            overflow-x: auto;
+        }
+        #city {
+            max-width: 200px;
+        }
+    </style>    
+  </head>
+  
+  <body>
+    <div class="bluebox ui-corner-all" id="facebook"> 
+        <p>Facebook.</p>
+        <p>Input Your City:<input id="city"></p>
+    </div>
+    <div class="yellowbox sans-serif ui-corner-all" id="apple">
+        <p>Apple.</p>
+    </div>
+    <div class="greenbox ui-corner-all" id="microsoft">
+      <p id="microsoftPara">Microsoft.</p> 
+      <p><a href="http://www.microsoft.com" title="Microsoft" id="microsoftLink">Microsoft Link</a></p>
+    </div>
+
+    <script>
+        $(function() {
+            $("#city").autocomplete({
+                source: ["London","Paris","New York","Mumbai","Amsterdam","Manchester","Lyon","Madrid","Barcelona"]
+            });
+        });
+        
+    </script>
+  </body>
+  
+  
+</html>

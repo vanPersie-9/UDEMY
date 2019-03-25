@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+      select HTML elements
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3B5998;
+        color: white;
+        height: auto;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: auto;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: auto;
+		width: auto; 
+	  }
+	  #great{
+		background-color: #8a1979;	
+	  }
+  </style>
+        <script src="js/jquery-3.3.1.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="bluebox">
+        <p>Facebook is <span id="great">great</span></p>
+        <p class="orange">fb</p>
+        <p>Facebook ~ fb</p>
+    </div>
+      <p> Sibling?</p>
+    <div class="yellowbox">
+        <p>Apple.</p>
+        <ul>
+            <li>BMW
+                <ul>
+                    <li>C2</li>
+                    <li>C3</li>
+                    <li>C4</li>
+                </ul>
+            </li>
+            <li>Audi</li>
+            <li>Mercedes</li>
+        </ul>
+        <p><a href="https://google.com">This is a link</a></p>
+        <p><a href="https://microsoft.com">This is another link</a></p>
+    </div>
+    <div class="greenbox">
+      <p>Microsoft.</p> 
+      <ul>
+          <li>BMW</li>
+          <li>Audi
+                <ul>
+                    <li>C2</li>
+                    <li>C3</li>
+                    <li>C4</li>
+                </ul>
+          </li>
+          <li>Mercedes</li>
+      </ul>
+        <table>
+            <tr><th>Phone Make</th><th>Model</th><th>Model</th></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+        </table>
+        <p>Type your Name: <input><button type="submit">Submit</button></p>
+    </div>
+    <script>
+      $(function() {
+          $("*").css("font-size",'16px');
+//          $("div ~ p").css("text-align", 'center');
+          $("div > p").css("text-align", 'center');
+          
+          $("#great").css("background-color", "green");
+          $(".orange").css("background-color", "orange");
+          $("div.bluebox").css("font-family","sans-serif");
+          $("p:first-child,last-child").css("text-decoration","underline");
+//          $("p:last-child").css("text-decoration","overline");
+          $("[href]").css("color","red");
+          $("li:first-child").css("background-color","pink");
+          $("tr:even").css("background-color", "orange");
+          $("tr:odd").css("background-color", "violet");
+          $(":input").css("background-color", "orange");
+          $(":submit").css("background-color", "cyan");
+          
+          $("div:has(table)").css("background-color", "yellow")
+          
+      });
+    </script>
+  </body>
+  
+  
+</html>

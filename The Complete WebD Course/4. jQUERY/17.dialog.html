@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>Dialog</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/start/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+    </script>
+
+    <style>
+      .bluebox{
+        background-color: #3B5998;
+        color: white;
+        height: 100px;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: 100px;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: 100px;
+		width: auto; 
+	  }
+	  #great{
+		background-color: #8a1979;	
+	  }
+    </style>    
+  </head>
+  
+  <body>
+    <div class="bluebox ui-corner-all" id="facebook"> 
+        <p>Facebook.</p>
+    </div>
+    <div class="yellowbox sans-serif ui-corner-all" id="apple">
+        <p>Apple.</p>
+    </div>
+    <div class="greenbox ui-corner-all" id="microsoft">
+        <p>Microsoft.</p>
+    </div>
+    <div id="myDialog" title="This is a dialog">
+        <p><span class="ui-icon ui-icon-alert" style="float:left"></span>Welcome to our page</p>
+    </div>
+    <div id="conf" title="Leave?">
+        <p>Sure?.!</p>  
+    </div>
+    <button id="open">Open Dialog</button>
+    <button id="prev">Go to Previous Page</button>
+    <script>
+        $(function() {
+            $("#myDialog").dialog({
+                autoOpen: false
+            });
+            $("#open").click(function() {
+                $("#myDialog").dialog("open");
+            });
+            $("button").button();
+            $("#conf").dialog({
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    "Go to previous page":function(){
+                        window.history.back();
+                    },
+                    "Cancel": function(){
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            $("#prev").click(function() {
+                $("#conf").dialog("open");
+            })
+        });
+        
+    </script>
+  </body>
+  
+  
+</html>

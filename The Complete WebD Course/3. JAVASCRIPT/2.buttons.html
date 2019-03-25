@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>alert message</title>
+    </head>
+    <body>
+        <p>Javascript.</p>
+        <button onclick="alert('How can I help you?')">Click Me</button>
+        <button id="button2">Click me as well</button>
+        <button id="button3">Hover over me</button>
+        <script>
+            document.getElementById("button2").onclick=function() {
+                alert("You Have just  clicked me.!");
+            }
+            document.getElementById("button3").onmouseover=function() {
+                alert("You are hovering over me.!");
+            }
+            
+        </script>
+    </body>
+</html>

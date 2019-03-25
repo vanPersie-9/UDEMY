@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+      change HTML styling
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3B5998;
+        color: white;
+        height: auto;
+        width:300px;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: auto;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: auto;
+		width: auto; 
+	  }
+	  #great{
+		background-color: #8a1979;	
+	  }
+      .sans-serif{
+        font-family: sans-serif;      
+      }
+  </style>
+        <script src="js/jquery-3.3.1.min.js"></script>
+  </head>
+  
+  <body>
+    <button id="changeFacebook">Change Facebook</button>
+    <button id="changeApple">Change Apple</button>
+    <button id="changeMicrosoft">Change Microsoft</button>
+    <button id="showMicrosoft">Show Microsoft</button>
+    <button id="changeGreat">Change Great</button>
+    <div class="bluebox" id="facebook">
+        <p>Facebook is <span id="great">great</span></p>
+    </div>
+    <div class="yellowbox sans-serif" id="apple">
+        <p>Apple.</p>
+    </div>
+    <div class="greenbox" id="microsoft">
+      <p id="microsoftPara">Microsoft.</p> 
+      <p><a href="http://www.microsoft.com" title="Microsoft" id="microsoftLink">Microsoft Link</a></p>
+    </div>
+    <p>Enter your name:<input></p>
+      
+    <script>
+        $(function() {
+            $("#changeFacebook").click(function() {
+                $("#facebook").css("width",100*Math.random()-50 + $("#facebook").width()); 
+                $("#facebook").addClass("greenbox");
+                window.alert($("#facebook").outerHeight());
+            
+            });
+            
+            $("#apple").click(function() {
+                $("#apple").removeClass("sans-serif");
+                $("#apple").css("position","absolute");
+                $("#apple").css({'top': 200*Math.random(), 'left':300*Math.random(), 'background-color':"rgb("+Math.floor(256*Math.random())+","+Math.floor(256*Math.random())+","+Math.floor(256*Math.random())+")"});
+                
+            });
+            
+            $("#changeMicrosoft").click(function() {
+                $("#microsoft").toggleClass("greenbox");
+            });
+            $("#microsoft").dblclick(function() {
+                $(this).hide();
+            });
+            $("#showMicrosoft").click(function() {
+                $("#microsoft").show();
+            });
+            $("#changeGreat").click(function() {
+                $("#great").wrap("<strong></strong>");
+                $("#great").wrap("<div></div>");
+            });
+            
+        });
+    </script>
+  </body>
+  
+  
+</html>

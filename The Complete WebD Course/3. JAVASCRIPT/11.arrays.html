@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Arrays</title>
+    </head>
+    <body>
+        <p id="myP">Javascript.</p>
+        <script>
+            //var shoppingList = ["bread", "eggs", "milk", 5];
+            var shoppingList = new Array("bread", "eggs", "milk");
+             showResult(shoppingList);
+            showResult(shoppingList[0]);
+            function showResult(x) {
+                document.getElementById("myP").innerHTML += "<br>" + x;
+            }
+            delete shoppingList[1];
+            showResult(shoppingList);
+            shoppingList[1]="Curd";
+            shoppingList.splice(1,1);
+            showResult(shoppingList);
+            shoppingList.splice(1,0,"banana","apple");
+            showResult(shoppingList);
+            shoppingList.sort();
+            showResult(shoppingList);
+            
+            var myString = "ABCD";
+            var myArray = myString.split('');
+            showResult(myArray);
+            
+        </script>
+    </body>
+</html>

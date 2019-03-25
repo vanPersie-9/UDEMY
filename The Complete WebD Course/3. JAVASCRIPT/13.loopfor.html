@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>loop for</title>
+    </head>
+    <body>
+        <p id="myP">Javascript.</p>
+        <script>
+            for(i=0; i<5; i++) {
+                document.getElementById("myP").innerHTML += "<br>" + i;
+            }
+            
+            var arr = ['a', 'b', 'c'];
+            for(i=0;i<arr.length;i++) {
+                document.getElementById("myP").innerHTML += "<br>" + arr[i];
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+      variables and datatypes
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3B5998;
+        color: white;
+        height: 100px;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: 100px;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: 100px;
+		width: auto;
+	  }
+	  .great{
+		background-color: #8a1979;
+		
+	  }
+  </style>
+  </head>
+  
+  <body>
+    <div class="bluebox" id="facebook">
+      <p>
+        Facebook is 
+        <span class="great">
+          great&nbsp;&nbsp;&nbsp;
+        </span>
+        .
+      </p>
+      
+    </div>
+    <div class="yellowbox" id="apple">
+      <p>
+        Apple.
+      </p>
+      
+    </div>
+    <div class="greenbox">
+      <p>
+        Microsoft.
+      </p>
+      
+    </div>
+      <button id="button1">Change Facebook Style</button>
+      <button id="button2">Change Apple Style</button>
+      <script>
+          var x = 3;
+          window.console.log(x);
+          var y;
+          y = 5;
+          var z;
+          window.console.log("The value of z is " + z);
+          z = x + y;
+          window.console.log(typeof(z));
+          window.console.log("The value of z is " + z);
+          z = x + "+" + y;
+          window.console.log("The value of z is " + z);
+          var c = x==3;
+          window.console.log(c);
+          var myArr = [1,2,3];
+          window.console.log(myArr);
+          window.console.log(typeof(myArr));
+          
+      </script>
+  </body>
+  
+  
+</html>

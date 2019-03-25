@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+      respond to Events
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3B5998;
+        color: white;
+        height: auto;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: auto;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: auto;
+		width: auto; 
+	  }
+	  #great{
+		background-color: #8a1979;	
+	  }
+  </style>
+        <script src="js/jquery-3.3.1.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="bluebox">
+        <p>Facebook is <span id="great">great</span></p>
+        <p class="orange">fb</p>
+        <p>Facebook ~ fb</p>
+    </div>
+      <p> Sibling?</p>
+    <div class="yellowbox">
+        <p>Apple.</p>
+        <ul>
+            <li>BMW
+                <ul>
+                    <li>C2</li>
+                    <li>C3</li>
+                    <li>C4</li>
+                </ul>
+            </li>
+            <li>Audi</li>
+            <li>Mercedes</li>
+        </ul>
+        <p><a href="https://google.com">This is a link</a></p>
+        <p><a href="https://microsoft.com">This is another link</a></p>
+    </div>
+    <div class="greenbox">
+      <p>Microsoft.</p> 
+      <ul>
+          <li>BMW</li>
+          <li>Audi
+                <ul>
+                    <li>C2</li>
+                    <li>C3</li>
+                    <li>C4</li>
+                </ul>
+          </li>
+          <li>Mercedes</li>
+      </ul>
+        <table>
+            <tr><th>Phone Make</th><th>Model</th><th>Model</th></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+            <tr><td>Apple</td><td>Iphone 4</td><td>16Gb</td></tr>
+        </table>
+    </div>
+      <p>Type your Name: </p><input id="input"><button type="submit" id="submit">Submit</button>
+    <script>
+        $(function() {
+//            $("p").click(function() {
+//                $(this).css("background-color","orange");
+//            });
+            $("p").hover(function() {
+                $(this).css("background-color","orange");
+            });
+            $("p").mouseout(function() {
+                $(this).css("background-color","");
+            });
+            
+            $("input").focus(function() {
+                $(this).css("background-color","cyan");
+            });
+            $("input").blur(function() {
+                $(this).css("background-color","");
+            });
+            $("input").keyup(function() {
+                $(this).css("background-color","blue");
+            });
+            $("#submit").click(function(){
+                $("#input").css("background-color","#ffffff");
+                $("#input").val("");
+            });
+        });
+    </script>
+  </body>
+  
+  
+</html>
